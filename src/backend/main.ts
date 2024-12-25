@@ -1,8 +1,11 @@
-export function add(a: number, b: number): number {
-  return a + b;
-}
+import { Application } from "jsr:@oak/oak";
 
-// Learn more at https://docs.deno.com/runtime/manual/examples/module_metadata#concepts
-if (import.meta.main) {
-  console.log("Add 2 + 3 =", add(2, 3));
-}
+const PORT: number = 8000;
+
+const app = new Application();
+
+app.use(() => {
+  console.log("server is running on port " + PORT);
+});
+
+app.listen({ port: PORT });
