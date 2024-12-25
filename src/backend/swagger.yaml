@@ -1,0 +1,51 @@
+openapi: 3.1.0
+info:
+  title: daily-dash
+  description: daily-dash is a todo list application. this is ia api specs for the application.
+  version: 1.0.0
+servers:
+  - url: 'http://localhost:8000'
+paths:
+  /users:
+    post:
+      summary: Create a new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  example: 'john_doe'
+                password:
+                  type: string
+                  example: 'password'
+                phone:
+                  type: string
+                  example: '1234567890'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    example: xyz123
+                  username:
+                    type: string
+                    example: 'john_doe'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: 'username is already taken'
