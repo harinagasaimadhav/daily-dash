@@ -30,7 +30,7 @@ paths:
                 username:
                   type: string
       responses:
-        200:
+        201:
           description: Successfully Created User
           content:
             application/json:
@@ -46,6 +46,36 @@ paths:
               description: return JWT Token
               schema:
                 type: string
+  /user/login:
+    post:
+      summary: User Login Request.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                mobileNumber:
+                  type: number
+                password:
+                  type: string
+      responses:
+        200:
+          description: Successfully Logged In
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+          headers:
+            Set-Cookie:
+              description: return JWT Token
+              schema:
+                type: string
+
 
 
 
