@@ -14,7 +14,8 @@
     "jsr:@std/io@0.224": "0.224.9",
     "jsr:@std/media-types@1": "1.1.0",
     "jsr:@std/path@1": "1.0.8",
-    "npm:path-to-regexp@6.2.1": "6.2.1"
+    "npm:path-to-regexp@6.2.1": "6.2.1",
+    "npm:types-ramda@0.30.1": "0.30.1"
   },
   "jsr": {
     "@oak/commons@1.0.0": {
@@ -76,6 +77,15 @@
   "npm": {
     "path-to-regexp@6.2.1": {
       "integrity": "sha512-JLyh7xT1kizaEvcaXOQwOc2/Yhw6KZOvPf1S8401UyLk86CU79LN3vl7ztXGm/pZ+YjoyAJ4rxmHwbkBXJX+yw=="
+    },
+    "ts-toolbelt@9.6.0": {
+      "integrity": "sha512-nsZd8ZeNUzukXPlJmTBwUAuABDe/9qtVDelJeT/qW0ow3ZS3BsQJtNkan1802aM9Uf68/Y8ljw86Hu0h5IUW3w=="
+    },
+    "types-ramda@0.30.1": {
+      "integrity": "sha512-1HTsf5/QVRmLzcGfldPFvkVsAdi1db1BBKzi7iW3KBUlOICg/nKnFS+jGqDJS3YD8VsWbAh7JiHeBvbsw8RPxA==",
+      "dependencies": [
+        "ts-toolbelt"
+      ]
     }
   },
   "workspace": {
