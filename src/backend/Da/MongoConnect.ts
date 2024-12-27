@@ -1,6 +1,5 @@
 import { Collection, MongoClient } from "npm:mongodb@6.1.0";
-import { ObjectId } from "npm:bson@6.10.1";
-import { Int32 } from "npm:bson@6.10.0";
+import { User } from "../dataObjects/User.ts";
 
 const MONGO_URI = "mongodb://192.168.56.103:27017";
 const DB_NAME = "daily-dash";
@@ -40,10 +39,3 @@ async function close() {
 
 Deno.addSignalListener("SIGINT", async () => await close());
 export { close, db, tasks, users };
-
-export interface User {
-  _id?: ObjectId;
-  mobileNumber: Int32;
-  password: string;
-  username: string;
-}
