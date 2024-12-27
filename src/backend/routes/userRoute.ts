@@ -1,10 +1,9 @@
 import { Router } from "jsr:@oak/oak";
-import { UserController } from "../controllers/UserController.ts";
+import { addUser } from "../controllers/UserController.ts";
 
 const router = new Router();
-const userController = new UserController();
 
-router.post("/register", userController.createUser)
+router.post("/register", addUser)
   .post("/login", async (ctx) => {
     ctx.response.status = 200;
     ctx.response.body = `user logged in`;
