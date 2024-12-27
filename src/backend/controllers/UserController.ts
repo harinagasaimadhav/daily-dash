@@ -15,6 +15,14 @@ async function createUser(context: Context) {
     return;
   }
 
+  const isUserAlreadyRegistered =
+    !!(await findUserByMobileNumber(userInput.mobileNumber));
+  if (isUserAlreadyRegistered) {
+    context.response.status = 400;
+    context.response.body = { message: "user already registered" };
+    return;
+  }
+
   const user = new User(
     userInput.mobileNumber,
     userInput.password,
@@ -34,8 +42,7 @@ async function createUser(context: Context) {
 }
 
 async function findUserByMobileNumber(mobileNumber: number) {
-  console.log(mobileNumber);
-  // return await userService.findUser({ mobileNumber: mobileNumber });
+  return await findUser({ mobileNumber: String(mobileNumber) });
 }
 
-export { addUser };
+export { createUser };

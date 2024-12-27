@@ -8,7 +8,7 @@ async function addUser(user: User): Promise<string> {
 }
 
 async function findUser(
-  filter: { [K: string]: string | number },
+  filter: { [K: string]: string },
 ): Promise<WithId<User> | null> {
   return await users.findOne(filter);
 }
